@@ -15,7 +15,7 @@ from game import Game, GameState
 from agent import Agent
 from memory import Memory
 from model import Residual_CNN
-from funcs import playMatches, playMatchesBetweenVersions, run_tournament, evaluate_tournament
+from funcs import playMatches, playMatchesBetweenVersions, run_tournament, evaluate_tournament, evaluate_train_loss
 
 import loggers as lg
 
@@ -155,9 +155,11 @@ iteration = 0
 
 #do_train(iteration, current_player, best_player, best_player_version,current_NN, best_NN, memory)
 
-env = Game()
+#env = Game()
 #run_tournament(env, 3)
-evaluate_tournament()
+#evaluate_tournament()
+
+evaluate_train_loss()
 
 #env = Game()
-#playMatchesBetweenVersions(env, 3, 18, 1, 10, lg.logger_tourney, 0, 0)
+#playMatchesBetweenVersions(env, 3, 39, -1, 10, lg.logger_tourney, 0, 1, True)

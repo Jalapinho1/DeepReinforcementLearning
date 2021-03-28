@@ -209,3 +209,20 @@ def get_models_from_path(path):
         versions_nums.append(first_part[7:])
 
     return versions_nums
+
+
+def evaluate_train_loss():
+    # Fix for wrong export
+    # df = pd.read_csv('loss2.csv',
+    #                names=['train_overall_loss', 'train_value_policy', 'train_policy_loss'])
+    # s = df.loc[:, 'train_overall_loss']
+    # last_occurence = s.where(s == 1.56760).last_valid_index()
+    # newDf = df.iloc[last_occurence::, :]
+    # newDf.to_csv('loss2.csv', index=False)
+    # newDf.reset_index()
+
+    df = pd.read_csv('repaired_loss_file.csv')
+    df.plot.line()
+    plt.xlabel('Iteration number')
+    plt.ylabel('Loss')
+    plt.show()
